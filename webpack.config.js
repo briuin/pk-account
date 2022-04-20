@@ -11,7 +11,7 @@ sharedMappings.register(path.join(__dirname, "tsconfig.json"), [
 module.exports = {
   output: {
     uniqueName: "pkAccount",
-    publicPath: 'https://briuin.github.io/pk-account'
+    publicPath: 'https://briuin.github.io/pk-account/'
   },
   optimization: {
     runtimeChunk: false
