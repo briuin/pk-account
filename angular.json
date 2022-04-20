@@ -35,8 +35,7 @@
 						],
 						"scripts": [],
 						"extraWebpackConfig": "webpack.config.js",
-						"commonChunk": false,
-						"deployUrl": "http://localhost:8086/"
+						"commonChunk": false
 					},
 					"configurations": {
 						"production": {
