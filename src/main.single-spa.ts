@@ -12,6 +12,9 @@ import { singleSpaPropsSubject } from './single-spa/single-spa-props';
 
 if (environment.production) {
   enableProdMode();
+} else {
+  platformBrowserDynamic().bootstrapModule(AppModule)
+    .catch(err => console.error(err));
 }
 
 const lifecycles = singleSpaAngular({
