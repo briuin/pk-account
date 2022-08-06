@@ -21,7 +21,7 @@ export class LoginComponent {
       return;
     }
     this.httpClient
-      .post('https://pk-center.herokuapp.com/login', {
+      .post('https://pk-center.herokuapp.com/auth/login', {
         username: this.form.getRawValue().username,
         password: this.form.getRawValue().password
       })
