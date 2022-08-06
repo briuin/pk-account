@@ -1,15 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
+  error: string | null = null;
+  form: FormGroup = new FormGroup({
+    username: new FormControl(''),
+    password: new FormControl('')
+  });
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) {}
 
-  ngOnInit(): void {
+  submit() {
+    if (!this.form.valid) {
+      return;
+    }
+    this.httpClient
+      .post('https://pk-center.herokuapp.com/user/login', {
+        username: this.form.getRawValue().username,
+        password: this.form.getRawValue().password
+      })
+      .subscribe(x => {
+        console.log('login successfully', x);
+      });
   }
-
 }
