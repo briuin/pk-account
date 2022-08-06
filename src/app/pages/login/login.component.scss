@@ -1,3 +1,10 @@
+@import "../../../styles.scss";
+
+.host-login {
+  max-width: 400px;
+  margin: 100px auto;
+}
+
 :host {
   display: flex;
   justify-content: center;
