@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
@@ -14,7 +15,7 @@ export class LoginComponent {
     password: new FormControl('')
   });
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient, private router: Router) {}
 
   submit() {
     if (!this.form.valid) {
@@ -25,8 +26,9 @@ export class LoginComponent {
         username: this.form.getRawValue().username,
         password: this.form.getRawValue().password
       })
-      .subscribe(x => {
-        console.log('login successfully', x);
+      .subscribe((x: any) => {
+        localStorage.setItem('token', JSON.stringify({value: x.access_token}))
+        this.router.navigate(['./']);
       });
   }
 }
