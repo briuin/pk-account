@@ -13,6 +13,10 @@ const routes: Routes = [
   {
     path: 'account',
     children: [
+      {
+        path: '',
+        pathMatch: 'full'
+      },
       { path: 'login', component: LoginComponent },
       {
         path: 'register',
