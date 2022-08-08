@@ -13,8 +13,9 @@ const routes: Routes = [
         path: 'register',
         loadChildren: () =>
           loadRemoteModule({
+            type: 'module',
             remoteEntry: environment.registerModuleUrl,
-            remoteName: 'pkAccountRegister',
+            // remoteName: 'pkAccountRegister',
             exposedModule: './RegisterModule'
           }).then(m => m.RegisterModule)
 
