@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { loadRemoteModule } from '@angular-architects/module-federation';
+import { APP_BASE_HREF } from '@angular/common';
 
 const routes: Routes = [
   {
@@ -29,6 +30,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, { useHash: true })],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [{ provide: APP_BASE_HREF, useValue: '/' }]
 })
 export class AppRoutingModule {}
