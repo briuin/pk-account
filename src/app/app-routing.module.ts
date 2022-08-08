@@ -7,16 +7,8 @@ import { APP_BASE_HREF } from '@angular/common';
 
 const routes: Routes = [
   {
-    path: '',
-    pathMatch: 'full'
-  },
-  {
     path: 'account',
     children: [
-      {
-        path: '',
-        pathMatch: 'full'
-      },
       { path: 'login', component: LoginComponent },
       {
         path: 'register',
