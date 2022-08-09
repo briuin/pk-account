@@ -22,7 +22,6 @@ export class LoginComponent {
   constructor(private httpClient: HttpClient, private router: Router) {}
 
   submit() {
-    console.log(this.form.valid, this.isLoading);
     if (!this.form.valid || this.isLoading) {
       return;
     }
